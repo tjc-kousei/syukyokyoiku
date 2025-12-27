@@ -4,75 +4,193 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宗教教育</title>
+    <title>宗教教育メニュー</title>
     <style>
+        /* 基本設定 */
+        :root {
+            --primary-color: #4A90E2; /* フォーム用：青系 */
+            --secondary-color: #50E3C2; /* 結果用：緑系 */
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
+
         body {
-            width: 100vw;
-            height: 100vh;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-        }
-        table{
-            width: 100%;
-            max-width: 400px;
+            padding: 20px;
+            min-height: 100vh;
         }
 
-        thead,
-        tfoot {
-            background-color: #333;
-            color: #fff;
-        }
-        
-        tbody{
-            height: 5em;
-        }
-        table,td {
-            border: 1px solid #333;
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #444;
             text-align: center;
         }
-        a {
+
+        /* コンテナ設定 */
+        .container {
+            width: 100%;
+            max-width: 600px; /* PCで見ても広がりすぎないように制限 */
+            display: grid;
+            gap: 15px;
+        }
+
+        /* カードデザイン */
+        .class-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .class-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .class-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            color: #2c3e50;
+        }
+
+        /* ボタンエリア */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1; /* 横幅いっぱいに広げる */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
             text-decoration: none;
-            color: blue;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: white;
+            transition: opacity 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* フォームボタン（記録） */
+        .btn-record {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+        }
+        
+        /* 結果ボタン（閲覧） */
+        .btn-result {
+            background-color: #2ECC71; /* 少し濃い緑で見やすく */
+            box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
+        }
+
+        /* ボタン内のアイコン的テキスト装飾 */
+        .btn span {
+            margin-right: 5px;
+        }
+
+        /* スマホ向けの微調整 */
+        @media (max-width: 400px) {
+            .class-name {
+                font-size: 1.1rem;
+            }
+            .btn {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <table>
-      <thead>
-        <tr>
-            <th colspan="5">宗教教育記録Form</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="https://forms.gle/J2cyfumhS1QrUtnc6" target="_blank">幼稚班</a></td>
-          <td><a href="https://forms.gle/QaXDXA5ZsmhEpk6TA" target="_blank">幼年班</a></td>
-          <td><a href="https://forms.gle/ggFioqxNzLnvvPCX7" target="_blank">少年班</a></td>
-          <td><a href="https://forms.gle/sw12k9eVccxFybZY6" target="_blank">初級班</a></td>
-          <td><a href="https://forms.gle/6pkJ21akYHwyGL1h8" target="_blank">中級班</a></td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-            <th colspan="5">宗教教育記録結果</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="https://docs.google.com/spreadsheets/d/1Sba8FsZfoZk9pDzOxmwIbF-ge3GrWYqzhOfLZbqri9o/edit?usp=sharing" target="_blank">幼稚班</a></td>
-          <td><a href="https://docs.google.com/spreadsheets/d/1gY_S8ewj2Wa0hk69VRaS6UK8WykxDcoM7Dufel3ujnA/edit?usp=sharing" target="_blank">幼年斑</a></td>
-          <td><a href="https://docs.google.com/spreadsheets/d/1VTKdwkcyQQ1QhwUYV-UoM_mppxvL_BaDhq7inY0r-Qw/edit?usp=sharing" target="_blank">少年斑</a></td>
-          <td><a href="https://docs.google.com/spreadsheets/d/1BCkZ8TkwKe5RUI1z2vS9cZgVHkiSn-2BnemavtWU-Y0/edit?usp=sharing" target="_blank">初級班</a></td>
-          <td><a href="https://docs.google.com/spreadsheets/d/1yuCzIYmVga3Bc48xcDDIJr7XgJLkG38Z6ePpW5ehrlA/edit?usp=sharing" target="_blank">中級班</a></td>
-        </tr>
-      </tbody>
-    </table>
+
+    <h1>宗教教育 記録メニュー</h1>
+
+    <div class="container">
+        <div class="class-card">
+            <div class="class-name">幼稚班</div>
+            <div class="action-buttons">
+                <a href="https://forms.gle/J2cyfumhS1QrUtnc6" target="_blank" class="btn btn-record">
+                    <span>✏️</span>記録する
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1Sba8FsZfoZk9pDzOxmwIbF-ge3GrWYqzhOfLZbqri9o/edit?usp=sharing" target="_blank" class="btn btn-result">
+                    <span>📊</span>結果を見る
+                </a>
+            </div>
+        </div>
+
+        <div class="class-card">
+            <div class="class-name">幼年班</div>
+            <div class="action-buttons">
+                <a href="https://forms.gle/QaXDXA5ZsmhEpk6TA" target="_blank" class="btn btn-record">
+                    <span>✏️</span>記録する
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1gY_S8ewj2Wa0hk69VRaS6UK8WykxDcoM7Dufel3ujnA/edit?usp=sharing" target="_blank" class="btn btn-result">
+                    <span>📊</span>結果を見る
+                </a>
+            </div>
+        </div>
+
+        <div class="class-card">
+            <div class="class-name">少年班</div>
+            <div class="action-buttons">
+                <a href="https://forms.gle/ggFioqxNzLnvvPCX7" target="_blank" class="btn btn-record">
+                    <span>✏️</span>記録する
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1VTKdwkcyQQ1QhwUYV-UoM_mppxvL_BaDhq7inY0r-Qw/edit?usp=sharing" target="_blank" class="btn btn-result">
+                    <span>📊</span>結果を見る
+                </a>
+            </div>
+        </div>
+
+        <div class="class-card">
+            <div class="class-name">初級班</div>
+            <div class="action-buttons">
+                <a href="https://forms.gle/sw12k9eVccxFybZY6" target="_blank" class="btn btn-record">
+                    <span>✏️</span>記録する
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1BCkZ8TkwKe5RUI1z2vS9cZgVHkiSn-2BnemavtWU-Y0/edit?usp=sharing" target="_blank" class="btn btn-result">
+                    <span>📊</span>結果を見る
+                </a>
+            </div>
+        </div>
+
+        <div class="class-card">
+            <div class="class-name">中級班</div>
+            <div class="action-buttons">
+                <a href="https://forms.gle/6pkJ21akYHwyGL1h8" target="_blank" class="btn btn-record">
+                    <span>✏️</span>記録する
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1yuCzIYmVga3Bc48xcDDIJr7XgJLkG38Z6ePpW5ehrlA/edit?usp=sharing" target="_blank" class="btn btn-result">
+                    <span>📊</span>結果を見る
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
